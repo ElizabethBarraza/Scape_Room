@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://cyb4dnc0amrmn"]
+
+[ext_resource type="Script" uid="uid://dasva8eeco3v6" path="res://Scripts/Levels/menu.gd" id="1_3ymnh"]
+[ext_resource type="Texture2D" uid="uid://30yh2auks6fh" path="res://Assets/Backgrounds/menu.jpeg" id="2_3qr6s"]
+
+[sub_resource type="FontVariation" id="FontVariation_3ymnh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qr6s"]
+bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.38431373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ymnh"]
+bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7r1e"]
+bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.33333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2mnh"]
+bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8inha"]
+bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.32941177)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5f3s"]
+bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
+
+[node name="Menu" type="Control" unique_id=806019462]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3ymnh")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1851978995]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1114.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3qr6s")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1767645952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1118.0
+offset_bottom = 605.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02745098, 0.02745098, 0.02745098, 0.11372549)
+
+[node name="Title" type="Label" parent="." unique_id=1427500184]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 444.0
+offset_top = 40.0
+offset_right = 659.0
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = 7
+theme_override_constants/paragraph_spacing = 1
+theme_override_constants/outline_size = 22
+theme_override_fonts/font = SubResource("FontVariation_3ymnh")
+theme_override_font_sizes/font_size = 68
+text = "WELCOME TO THE 
+ESCAPE ROOM"
+horizontal_alignment = 1
+
+[node name="Centerpanel" type="Panel" parent="." unique_id=868163155]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_right = 0.075
+offset_left = 222.0
+offset_top = 254.0
+offset_right = 911.0
+offset_bottom = 635.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Centerpanel" unique_id=221331684]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 8.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Centerpanel/VBoxContainer" unique_id=538707695]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_3qr6s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3ymnh")
+text = "PLAY"
+
+[node name="LevelsButton" type="Button" parent="Centerpanel/VBoxContainer" unique_id=397534423]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7r1e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n2mnh")
+text = "LEVELS"
+
+[node name="ExitButton" type="Button" parent="Centerpanel/VBoxContainer" unique_id=1802683896]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_8inha")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x5f3s")
+text = "EXIT"
+
+[connection signal="pressed" from="Centerpanel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Centerpanel/VBoxContainer/LevelsButton" to="." method="_on_levels_button_pressed"]
+[connection signal="pressed" from="Centerpanel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

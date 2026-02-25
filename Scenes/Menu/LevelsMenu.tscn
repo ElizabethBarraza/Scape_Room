@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bnq7xkpnbkfji"]
+
+[ext_resource type="Script" uid="uid://d2w053giqfjdx" path="res://Scripts/Levels/levels_menu.gd" id="1_ibdyr"]
+[ext_resource type="Texture2D" uid="uid://30yh2auks6fh" path="res://Assets/Backgrounds/menu.jpeg" id="2_4l5r0"]
+
+[sub_resource type="FontVariation" id="FontVariation_4l5r0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4l5r0"]
+bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.38431373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ostru"]
+bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icget"]
+bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.38431373)
+corner_detail = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjrt5"]
+bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
+corner_detail = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isdrj"]
+bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.38431373)
+corner_detail = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1s7m"]
+bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
+corner_detail = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_why6m"]
+bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.38431373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7gmc"]
+bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk71o"]
+bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.38431373)
+corner_detail = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbuvr"]
+bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
+
+[node name="LevelsMenu" type="Control" unique_id=1880935539]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ibdyr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1432750906]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 1113.0
+offset_bottom = 606.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4l5r0")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1806219103]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.007843138, 0.007843138, 0.007843138, 0.30980393)
+
+[node name="Label" type="Label" parent="." unique_id=1444450115]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 86.0
+offset_right = 845.0
+offset_bottom = 244.0
+theme_override_constants/line_spacing = 7
+theme_override_constants/paragraph_spacing = 1
+theme_override_constants/outline_size = 22
+theme_override_fonts/font = SubResource("FontVariation_4l5r0")
+theme_override_font_sizes/font_size = 68
+text = "LEVELS MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1256071624]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 262.0
+offset_top = 249.0
+offset_right = 898.0
+offset_bottom = 525.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level1Button" type="Button" parent="VBoxContainer" unique_id=420724712]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_4l5r0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ostru")
+text = "LEVEL 1"
+
+[node name="Level2Button" type="Button" parent="VBoxContainer" unique_id=875087339]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_icget")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hjrt5")
+text = "LEVEL 2"
+autowrap_mode = 2
+
+[node name="Level3Button" type="Button" parent="VBoxContainer" unique_id=523395170]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_isdrj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t1s7m")
+text = "LEVEL 3"
+
+[node name="Level4Button" type="Button" parent="VBoxContainer" unique_id=345174936]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_why6m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k7gmc")
+text = "LEVEL 4"
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1787561535]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_pk71o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vbuvr")
+text = "BACK"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dkohd6py3o6th"]
+
+[ext_resource type="Script" uid="uid://b4rjhawb8yx45" path="res://Scripts/Levels/splash.gd" id="1_qowkc"]
+[ext_resource type="Texture2D" uid="uid://c2pkokto322bh" path="res://Assets/Backgrounds/Splash.jpeg" id="2_eiwyq"]
+
+[node name="Splash" type="Control" unique_id=908618917]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qowkc")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1154382711]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1114.0
+offset_bottom = 604.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eiwyq")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LoadingBar" type="ProgressBar" parent="." unique_id=1182581741]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 331.0
+offset_top = 499.0
+offset_right = 891.0
+offset_bottom = 529.0
+grow_horizontal = 2
+grow_vertical = 0
