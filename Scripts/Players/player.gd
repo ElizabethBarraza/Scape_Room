@@ -39,3 +39,4 @@ func update_animation(direction):
 
 func _ready():
 	add_to_group("player")
+	sprite.play("idle_down")

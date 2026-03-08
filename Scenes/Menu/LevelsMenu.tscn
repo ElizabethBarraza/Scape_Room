@@ -68,7 +68,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.007843138, 0.007843138, 0.007843138, 0.30980393)
 
-[node name="Label" type="Label" parent="." unique_id=1444450115]
+[node name="title" type="Label" parent="." unique_id=1444450115]
 layout_mode = 0
 offset_left = 345.0
 offset_top = 86.0
@@ -137,4 +137,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_pk71o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vbuvr")
 text = "BACK"
 
+[connection signal="pressed" from="VBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
