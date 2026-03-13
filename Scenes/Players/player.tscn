@@ -235,6 +235,7 @@ position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_1yn31")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=140084258]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_umebe")
 animation = &"walk_up"
 

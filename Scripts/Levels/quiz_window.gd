@@ -1,11 +1,13 @@
 extends Panel
 
-@onready var quiz_image: TextureRect = $MarginContainer/VBoxContainer/QuizImage
-@onready var question_label: Label = $MarginContainer/VBoxContainer/QuestionLabel
-@onready var option_a: Button = $MarginContainer/VBoxContainer/OptionsBox/OptionA
-@onready var option_b: Button = $MarginContainer/VBoxContainer/OptionsBox/OptionB
-@onready var option_c: Button = $MarginContainer/VBoxContainer/OptionsBox/OptionC
-@onready var feedback_label: Label = $MarginContainer/VBoxContainer/FeedbackLabel
+@onready var quiz_image: TextureRect = $CenterContainer/Panel/MarginContainer/VBoxContainer/ImagePanel/QuizImage
+@onready var question_label: Label = $CenterContainer/Panel/MarginContainer/VBoxContainer/QuestionLabel
+
+@onready var option_a: Button = $CenterContainer/Panel/MarginContainer/VBoxContainer/OptionsBox/OptionA
+@onready var option_b: Button = $CenterContainer/Panel/MarginContainer/VBoxContainer/OptionsBox/OptionB
+@onready var option_c: Button = $CenterContainer/Panel/MarginContainer/VBoxContainer/OptionsBox/OptionC
+
+@onready var feedback_label: Label = $CenterContainer/Panel/MarginContainer/VBoxContainer/FeedbackLabel
 
 var preguntas = [
 	{
@@ -123,6 +125,7 @@ func _on_option_pressed(button: Button) -> void:
 
 	if button.text == respuesta_correcta:
 		feedback_label.text = "Correct!"
+		feedback_label.modulate = Color(0.4, 1.0, 0.4)
 		await get_tree().create_timer(0.5, true).timeout
 
 		indice_actual += 1
@@ -137,3 +140,15 @@ func _on_option_pressed(button: Button) -> void:
 			mostrar_pregunta()
 	else:
 		feedback_label.text = "Incorrect. Try again."
+		feedback_label.modulate = Color(1.0, 0.4, 0.4)
+		var nivel = get_tree().current_scene
+		if nivel.has_method("registrar_intento_incorrecto"):
+			nivel.registrar_intento_incorrecto()
+		
+func cerrar_quizwindow():
+	visible = false
+	get_tree().paused = false
+	
+	var nivel = get_tree().current_scene
+	if nivel.has_method("quiz_respondido"):
+		nivel.quiz_respondido()

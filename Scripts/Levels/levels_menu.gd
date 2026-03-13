@@ -10,7 +10,7 @@ var title_original_position
 func _ready():
 	level2_button.disabled = true
 	level3_button.disabled = true
-	level4_button.disabled = true
+	
 	# Guardar posiciones originales
 	title_original_position = title.position
 	
