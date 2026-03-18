@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2w053giqfjdx" path="res://Scripts/Levels/levels_menu.gd" id="1_ibdyr"]
 [ext_resource type="Texture2D" uid="uid://30yh2auks6fh" path="res://Assets/Backgrounds/menu.jpeg" id="2_4l5r0"]
+[ext_resource type="AudioStream" uid="uid://droc5e3omq744" path="res://Assets/Audios/soundtrack.mp3" id="3_ostru"]
 
 [sub_resource type="FontVariation" id="FontVariation_4l5r0"]
 
@@ -124,6 +125,11 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_pk71o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vbuvr")
 text = "BACK"
+
+[node name="Soundtrack" type="AudioStreamPlayer2D" parent="." unique_id=85920420]
+stream = ExtResource("3_ostru")
+volume_db = -25.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

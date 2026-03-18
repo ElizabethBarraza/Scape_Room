@@ -3,6 +3,7 @@ extends Control
 @onready var title = $Title
 @onready var panel = $Centerpanel
 @onready var buttons = $Centerpanel/VBoxContainer.get_children()
+@onready var sfx_button = $SfxButton
 
 var title_original_position
 var panel_original_position
@@ -45,12 +46,25 @@ func _ready():
 
 
 func _on_play_button_pressed():
+	$SfxButton.play()
+		
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://Scenes/levels/level1.tscn")
+	
 
 
 func _on_levels_button_pressed():
+	if $SfxButton != null:
+		$SfxButton.play()
+		
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://Scenes/Menu/LevelsMenu.tscn")
+	
 
 
 func _on_exit_button_pressed():
+	if $SfxButton != null:
+		$SfxButton.play()
+		
+	await get_tree().create_timer(0.15).timeout
 	get_tree().quit()

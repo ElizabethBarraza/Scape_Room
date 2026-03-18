@@ -16,6 +16,8 @@ extends Control
 
 @export var next_level_path: String = ""
 @export var main_menu_path: String = "res://Scenes/menu/menu.tscn"
+@onready var sfx_gameover = $SfxGameOver
+@onready var sfx_victory = $SfxVictory
 
 var star_full: Texture2D = preload("res://Assets/Sprites/StarYellow.png")
 var star_empty: Texture2D = preload("res://Assets/Sprites/StarGray.png")
@@ -43,6 +45,7 @@ func mostrar_resultados(time_text: String, incorrect_attempts: int) -> void:
 		score_label.text = "Score: 0 / 1000"
 		title_label.modulate = Color(1.0, 0.3, 0.3)
 		result_label.modulate = Color(1.0, 0.4, 0.4)
+		sfx_gameover.play()
 
 		actualizar_estrellas(0)
 
@@ -57,6 +60,7 @@ func mostrar_resultados(time_text: String, incorrect_attempts: int) -> void:
 
 		var estrellas := calcular_estrellas(incorrect_attempts)
 		actualizar_estrellas(estrellas)
+		sfx_victory.play()
 
 		if estrellas == 3:
 			result_label.text = "EXCELLENT!"

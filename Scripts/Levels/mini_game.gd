@@ -3,6 +3,7 @@ extends Panel
 @onready var card_display: TextureRect = $VBoxContainer/HBoxContainer/CardDisplay
 @onready var btn_prev: Button = $VBoxContainer/HBoxContainer/BtnPrev
 @onready var btn_next: Button = $VBoxContainer/HBoxContainer/BtnNext
+@onready var sfx_card = $SfxCard
 
 var cartas: Array[Texture2D] = [
 	preload("res://Assets/Sprites/Card1.jpeg"),
@@ -45,11 +46,13 @@ func _input(event):
 
 
 func _on_prev_pressed() -> void:
+	sfx_card.play()
 	indice_actual = (indice_actual - 1 + cartas.size()) % cartas.size()
 	actualizar_carta()
 
 
 func _on_next_pressed() -> void:
+	sfx_card.play()
 	indice_actual = (indice_actual + 1) % cartas.size()
 	actualizar_carta()
 

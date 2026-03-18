@@ -8,28 +8,38 @@
 [ext_resource type="Script" uid="uid://b8kg24tqu6foi" path="res://Scripts/Levels/mini_game.gd" id="6_m0h5h"]
 [ext_resource type="Script" uid="uid://by24dendjrqkr" path="res://Scripts/Levels/dialogbox.gd" id="7_20uw2"]
 [ext_resource type="Texture2D" uid="uid://b35amy8gwkfq7" path="res://Assets/Backgrounds/Toro.png" id="8_i36j2"]
+[ext_resource type="AudioStream" uid="uid://bw1hhyuxifb6d" path="res://Assets/Audios/Card.wav" id="8_rr7wi"]
 [ext_resource type="Script" uid="uid://dbsj020cufn72" path="res://Scripts/Levels/quiz_window.gd" id="10_4f2fw"]
 [ext_resource type="Texture2D" uid="uid://bld5onbisgnyh" path="res://Assets/supervisor/down/1.png" id="10_ir7pk"]
 [ext_resource type="Script" uid="uid://c4jjkjkfqfi5a" path="res://Scripts/Players/supervisor_detector.gd" id="11_4f2fw"]
 [ext_resource type="Script" uid="uid://btsrhv6ctsbw8" path="res://Scripts/Levels/level_complete_window.gd" id="11_60msr"]
 [ext_resource type="Texture2D" uid="uid://7lsq76dnj460" path="res://Assets/Sprites/StarYellow.png" id="11_f8if4"]
 [ext_resource type="Texture2D" uid="uid://bao4frvj77omr" path="res://Assets/Door/scene.png" id="11_ilsv2"]
+[ext_resource type="AudioStream" uid="uid://df6u6vd4hr3o2" path="res://Assets/Audios/incorrect-answer.wav" id="12_7e7vy"]
 [ext_resource type="Script" uid="uid://mxjsb20p0k7d" path="res://Scripts/Levels/door.gd" id="13_v3vqe"]
 [ext_resource type="Texture2D" uid="uid://deipr6ahy0u3t" path="res://Assets/Door/open_door1.png" id="14_bvs0b"]
+[ext_resource type="AudioStream" uid="uid://civee3885a8bh" path="res://Assets/Audios/game-over.wav" id="15_iqpl7"]
 [ext_resource type="Texture2D" uid="uid://d04x84g8ksnfl" path="res://Assets/Door/open_door2.png" id="15_syfhk"]
+[ext_resource type="AudioStream" uid="uid://bv4prxciockcn" path="res://Assets/Audios/Victory.wav" id="16_ij04u"]
 [ext_resource type="Texture2D" uid="uid://biikvrohlx02i" path="res://Assets/Door/open_door3.png" id="16_u45xj"]
 [ext_resource type="Texture2D" uid="uid://bvpjakyyklb8g" path="res://Assets/Door/open_door4.png" id="17_ay16s"]
 [ext_resource type="Script" uid="uid://8gvfas87yyvj" path="res://Scripts/Levels/detector_door.gd" id="18_bvs0b"]
+[ext_resource type="Script" uid="uid://7ks81hb348aq" path="res://Scripts/Levels/code_dialog.gd" id="18_oi13q"]
 [ext_resource type="Texture2D" uid="uid://cwt05fntghs1u" path="res://Assets/Door/cones.png" id="19_syfhk"]
+[ext_resource type="Script" uid="uid://cd01avrsyoh7r" path="res://Scripts/Levels/keypad_window.gd" id="19_we4kv"]
 [ext_resource type="Texture2D" uid="uid://dhalgmxgsk5lu" path="res://Assets/Door/box.png" id="20_u45xj"]
 [ext_resource type="Texture2D" uid="uid://xf3e1k6w5n7p" path="res://Assets/Door/lamp.png" id="21_5y6uu"]
 [ext_resource type="Texture2D" uid="uid://bjdfssbv1atu3" path="res://Assets/Door/machine.png" id="22_6748a"]
 [ext_resource type="Texture2D" uid="uid://cffedym3o23rw" path="res://Assets/Door/boxes.png" id="23_5y6uu"]
+[ext_resource type="AudioStream" uid="uid://dvj5nb3km7j6y" path="res://Assets/Audios/door-opening.wav" id="24_3gtsu"]
 [ext_resource type="Texture2D" uid="uid://cwbygr38y8a15" path="res://Assets/Door/machine2.png" id="24_m4h5f"]
 [ext_resource type="Texture2D" uid="uid://p0pbdypan3bk" path="res://Assets/Door/machine1.png" id="25_d2e0u"]
 [ext_resource type="Texture2D" uid="uid://bvk7go0uwmcs2" path="res://Assets/Door/machine3.png" id="28_4xs7e"]
 [ext_resource type="Texture2D" uid="uid://pc7w0tgdmb0j" path="res://Assets/Door/PrimeroAuxilios.png" id="29_ilop2"]
 [ext_resource type="Texture2D" uid="uid://ch82f1kvygdy8" path="res://Assets/Door/Extintor.png" id="30_lqrgo"]
+[ext_resource type="AudioStream" uid="uid://chg5xffpwfmce" path="res://Assets/Audios/correct-answer.wav" id="31_lqrgo"]
+[ext_resource type="Script" uid="uid://d07d8spf34bma" path="res://Scripts/Levels/panel_detector.gd" id="35_86v4d"]
+[ext_resource type="AudioStream" uid="uid://dfy22fn34hdrw" path="res://Assets/Audios/Ambient.wav" id="36_awofh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xrym"]
 texture = ExtResource("3_1ukdm")
@@ -198,6 +208,111 @@ bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi13q"]
 bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86v4d"]
+bg_color = Color(0.11372549, 0.16470589, 0.23921569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.37254903, 0.56078434, 0.7882353, 1)
+corner_detail = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7vli"]
+bg_color = Color(0.08627451, 0.21568628, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2901961, 0.65882355, 1, 1)
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ducbq"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg0ge"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_310r7"]
+bg_color = Color(0.11372549, 0.16470589, 0.23921569, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2901961, 0.65882355, 1, 1)
+corner_detail = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tybo4"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbk4v"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02o20"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5svh"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0qlf"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1qbx"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d3tx"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm83v"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50rkd"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybker"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ggop"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05ylv"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gpaab"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_temdy"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igaxx"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhttr"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1bkc"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rxjj"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai2e5"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fap1h"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xngwx"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mw1f"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8jft"]
+bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6va14"]
+bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilsv2"]
 size = Vector2(43, 95)
 
@@ -256,6 +371,9 @@ size = Vector2(78.75, 67.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5o2p"]
 size = Vector2(55, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7vli"]
+size = Vector2(70, 101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilop2"]
 size = Vector2(809, 110)
@@ -328,7 +446,7 @@ offset_top = 17.0
 offset_right = 436.0
 offset_bottom = 55.0
 theme_override_font_sizes/font_size = 24
-text = "Presiona E"
+text = "Press to E"
 
 [node name="MiniGameWindow" type="Panel" parent="UI" index="1" unique_id=1498582458]
 process_mode = 3
@@ -393,8 +511,12 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 text = ">"
 
+[node name="SfxCard" type="AudioStreamPlayer2D" parent="UI/MiniGameWindow" index="1" unique_id=425513477]
+process_mode = 3
+stream = ExtResource("8_rr7wi")
+volume_db = -30.0
+
 [node name="DialogBox" type="Panel" parent="UI" index="2" unique_id=1754792432]
-visible = false
 custom_minimum_size = Vector2(180, 220)
 anchors_preset = 12
 anchor_top = 1.0
@@ -433,7 +555,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = SubResource("SystemFont_20uw2")
 theme_override_font_sizes/font_size = 42
-text = "Read the cards on the table and then approach the supervisor to answer their questions."
+text = "Read the cards on the table and then approach the supervisor to answer his questions."
 autowrap_mode = 2
 justification_flags = 227
 
@@ -543,6 +665,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_4xs7e")
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
+
+[node name="SfxCorrect" type="AudioStreamPlayer2D" parent="UI/QuizWindow" index="2" unique_id=1859219278]
+position = Vector2(-151, -24)
+stream = ExtResource("31_lqrgo")
+volume_db = -6.0
+
+[node name="SfxWrong" type="AudioStreamPlayer2D" parent="UI/QuizWindow" index="3" unique_id=1515265087]
+stream = ExtResource("12_7e7vy")
+volume_db = -6.0
 
 [node name="LevelCompleteWindow" type="Control" parent="UI" index="4" unique_id=1546794328]
 visible = false
@@ -684,6 +815,252 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rr7wi")
 theme_override_styles/hover = SubResource("StyleBoxFlat_oi13q")
 text = "Main menu"
 
+[node name="SfxGameOver" type="AudioStreamPlayer2D" parent="UI/LevelCompleteWindow" index="2" unique_id=558267236]
+stream = ExtResource("15_iqpl7")
+volume_db = -8.0
+
+[node name="SfxVictory" type="AudioStreamPlayer2D" parent="UI/LevelCompleteWindow" index="3" unique_id=1335145532]
+stream = ExtResource("16_ij04u")
+volume_db = -15.0
+
+[node name="CodeDialog" type="Panel" parent="UI" index="5" unique_id=2135546886]
+visible = false
+custom_minimum_size = Vector2(520, 260)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -150.0
+offset_right = 334.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_oi13q")
+
+[node name="Overlay" type="ColorRect" parent="UI/CodeDialog" index="0" unique_id=789697213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -44.0
+offset_right = 109.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/CodeDialog" index="1" unique_id=2066456285]
+layout_mode = 0
+offset_right = 650.0
+offset_bottom = 300.0
+
+[node name="MainPanel" type="Panel" parent="UI/CodeDialog/CenterContainer" index="0" unique_id=189354023]
+custom_minimum_size = Vector2(650, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_86v4d")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/CodeDialog/CenterContainer/MainPanel" index="0" unique_id=1326544395]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 649.0
+offset_bottom = 315.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CodeDialog/CenterContainer/MainPanel/MarginContainer" index="0" unique_id=1768835721]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="TitleLabel" type="Label" parent="UI/CodeDialog/CenterContainer/MainPanel/MarginContainer/VBoxContainer" index="0" unique_id=1826851065]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Supervisor"
+horizontal_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="UI/CodeDialog/CenterContainer/MainPanel/MarginContainer/VBoxContainer" index="1" unique_id=2021410311]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "The acces code is:
+
+Go to the wall panel and enter it"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="OkButton" type="Button" parent="UI/CodeDialog/CenterContainer/MainPanel/MarginContainer/VBoxContainer" index="2" unique_id=282929945]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b7vli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ducbq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bg0ge")
+text = "Ok"
+
+[node name="KeypadWindow" type="Panel" parent="UI" index="6" unique_id=536076351]
+visible = false
+custom_minimum_size = Vector2(420, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("19_we4kv")
+
+[node name="Overlay" type="ColorRect" parent="UI/KeypadWindow" index="0" unique_id=1310987927]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 45.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/KeypadWindow" index="1" unique_id=47137753]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainPanel" type="Panel" parent="UI/KeypadWindow/CenterContainer" index="0" unique_id=1879709177]
+custom_minimum_size = Vector2(500, 430)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_310r7")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/KeypadWindow/CenterContainer/MainPanel" index="0" unique_id=920030565]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 494.0
+offset_bottom = 398.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer" index="0" unique_id=315948604]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TitleLabel" type="Label" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer" index="0" unique_id=567780255]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Wall Panel"
+horizontal_alignment = 1
+
+[node name="InputLabel" type="Label" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer" index="1" unique_id=480392010]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "_ _ _ _"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer" index="2" unique_id=2125060657]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Btn1" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="0" unique_id=216918902]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tybo4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rbk4v")
+text = "1"
+
+[node name="Btn2" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="1" unique_id=1603069265]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02o20")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k5svh")
+text = "2"
+
+[node name="Btn3" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="2" unique_id=1553872577]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s0qlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i1qbx")
+text = "3"
+
+[node name="Btn4" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="3" unique_id=36137279]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d3tx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tm83v")
+text = "4"
+
+[node name="Btn5" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="4" unique_id=1042755295]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_50rkd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ybker")
+text = "5"
+
+[node name="Btn6" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="5" unique_id=100073965]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5ggop")
+theme_override_styles/hover = SubResource("StyleBoxFlat_05ylv")
+text = "6"
+
+[node name="Btn7" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="6" unique_id=439462003]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gpaab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_temdy")
+text = "7"
+
+[node name="Btn8" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="7" unique_id=930309504]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igaxx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xhttr")
+text = "8"
+
+[node name="Btn9" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="8" unique_id=1354099108]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y1bkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rxjj")
+text = "9"
+
+[node name="BtnClear" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="9" unique_id=80582049]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ai2e5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fap1h")
+text = "Clear"
+
+[node name="Btn0" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="10" unique_id=724875963]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xngwx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1mw1f")
+text = "0"
+
+[node name="BtnEnter" type="Button" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer" index="11" unique_id=1181753817]
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j8jft")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6va14")
+text = "Enter"
+
+[node name="FeedbackLabel" type="Label" parent="UI/KeypadWindow/CenterContainer/MainPanel/MarginContainer/VBoxContainer" index="3" unique_id=385392867]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+horizontal_alignment = 1
+
 [node name="Supervisor" type="StaticBody2D" parent="." index="7" unique_id=1165071628]
 position = Vector2(984, 307)
 collision_mask = 3
@@ -733,6 +1110,10 @@ visibility_layer = 3
 position = Vector2(872.99994, 1)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("21_5y6uu")
+
+[node name="SfxDoor" type="AudioStreamPlayer2D" parent="Door" index="4" unique_id=1472644659]
+stream = ExtResource("24_3gtsu")
+volume_db = -6.0
 
 [node name="Cono" type="StaticBody2D" parent="." index="9" unique_id=554795939]
 
@@ -858,6 +1239,15 @@ visibility_layer = 3
 position = Vector2(772.5, 79.5)
 shape = SubResource("RectangleShape2D_j5o2p")
 
+[node name="Detector" type="Area2D" parent="PanelPared" index="2" unique_id=2017250015]
+script = ExtResource("35_86v4d")
+keypad_window_path = NodePath("../../UI/KeypadWindow")
+interact_label_path = NodePath("../../UI/InteractLabel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelPared/Detector" index="0" unique_id=2125809569]
+position = Vector2(771, 104.5)
+shape = SubResource("RectangleShape2D_b7vli")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="18" unique_id=2099084693]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" index="0" unique_id=1183814220]
@@ -868,7 +1258,7 @@ texture = ExtResource("25_d2e0u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1" unique_id=1546210931]
 visibility_layer = 3
-position = Vector2(412, 57)
+position = Vector2(405, 63)
 shape = SubResource("RectangleShape2D_ilop2")
 
 [node name="Machine4" type="StaticBody2D" parent="." index="19" unique_id=1904164344]
@@ -925,3 +1315,9 @@ texture = ExtResource("30_lqrgo")
 visibility_layer = 3
 position = Vector2(365, 59)
 shape = SubResource("RectangleShape2D_3gtsu")
+
+[node name="BgmLevel" type="AudioStreamPlayer2D" parent="." index="23" unique_id=1072150423]
+process_mode = 3
+stream = ExtResource("36_awofh")
+volume_db = -15.0
+autoplay = true

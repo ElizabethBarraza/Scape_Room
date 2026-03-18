@@ -2,7 +2,8 @@ extends Panel
 
 @onready var quiz_image: TextureRect = $CenterContainer/Panel/MarginContainer/VBoxContainer/ImagePanel/QuizImage
 @onready var question_label: Label = $CenterContainer/Panel/MarginContainer/VBoxContainer/QuestionLabel
-
+@onready var sfx_correct = $SfxCorrect
+@onready var sfx_wrong = $SfxWrong
 @onready var option_a: Button = $CenterContainer/Panel/MarginContainer/VBoxContainer/OptionsBox/OptionA
 @onready var option_b: Button = $CenterContainer/Panel/MarginContainer/VBoxContainer/OptionsBox/OptionB
 @onready var option_c: Button = $CenterContainer/Panel/MarginContainer/VBoxContainer/OptionsBox/OptionC
@@ -124,9 +125,11 @@ func _on_option_pressed(button: Button) -> void:
 	var respuesta_correcta = pregunta["correcta"]
 
 	if button.text == respuesta_correcta:
+		sfx_correct.play()
 		feedback_label.text = "Correct!"
 		feedback_label.modulate = Color(0.4, 1.0, 0.4)
 		await get_tree().create_timer(0.5, true).timeout
+		
 
 		indice_actual += 1
 
@@ -139,11 +142,13 @@ func _on_option_pressed(button: Button) -> void:
 		else:
 			mostrar_pregunta()
 	else:
+		sfx_wrong.play()
 		feedback_label.text = "Incorrect. Try again."
 		feedback_label.modulate = Color(1.0, 0.4, 0.4)
 		var nivel = get_tree().current_scene
 		if nivel.has_method("registrar_intento_incorrecto"):
 			nivel.registrar_intento_incorrecto()
+			sfx_wrong.play()
 		
 func cerrar_quizwindow():
 	visible = false

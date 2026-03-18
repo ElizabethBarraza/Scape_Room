@@ -2,7 +2,6 @@ extends Control
 
 @onready var level2_button = $VBoxContainer/Level2Button
 @onready var level3_button = $VBoxContainer/Level3Button
-@onready var level4_button = $VBoxContainer/Level4Button
 @onready var buttons = $VBoxContainer.get_children()
 @onready var title = $title
 var title_original_position
@@ -45,9 +44,6 @@ func _on_level_2_button_pressed():
 
 func _on_level_3_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/levels/level3.tscn")
-	
-func _on_level_4_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/levels/level4.tscn")
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/menu/menu.tscn")

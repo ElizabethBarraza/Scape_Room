@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://s67iqex6qxxp" path="res://Assets/Alex/walk/up/7.png" id="43_g1q2y"]
 [ext_resource type="Texture2D" uid="uid://dh0up32a2e5fe" path="res://Assets/Alex/walk/up/8.png" id="44_wvnkw"]
 [ext_resource type="Texture2D" uid="uid://bpv7yt4ohfft0" path="res://Assets/Alex/walk/up/9.png" id="45_lvf6g"]
+[ext_resource type="AudioStream" uid="uid://cu16oh0bckdls" path="res://Assets/Audios/Pasos.wav" id="46_bn8xc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yn31"]
 size = Vector2(35, 53)
@@ -244,3 +245,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 1152
 limit_bottom = 648
+
+[node name="SfxSteps" type="AudioStreamPlayer2D" parent="." unique_id=2015937613]
+stream = ExtResource("46_bn8xc")
+volume_db = -12.0

@@ -6,8 +6,15 @@ var incorrect_attempts: int = 0
 var start_time_ms: int = 0
 var nivel_completado: bool = false
 
+# Nuevo sistema de código
+var codigo_puerta: String = ""
+var panel_desbloqueado: bool = false
+
 @onready var door_lamp = get_node_or_null("Door/DoorLamp")
+@onready var quiz_window = $UI/QuizWindow
 @onready var level_complete_window = $UI/LevelCompleteWindow
+@onready var code_dialog = $UI/CodeDialog
+@onready var keypad_window = $UI/KeypadWindow
 
 var lamp_red: Texture2D = preload("res://Assets/Door/lamp.png")
 var lamp_yellow: Texture2D = preload("res://Assets/Door/lamp1.png")
@@ -22,7 +29,7 @@ func actualizar_lampara() -> void:
 	if door_lamp == null:
 		return
 
-	if supervisor_aprobado:
+	if panel_desbloqueado:
 		door_lamp.texture = lamp_green
 	elif cartas_leidas:
 		door_lamp.texture = lamp_yellow
@@ -41,13 +48,40 @@ func puede_hablar_con_supervisor() -> bool:
 
 func registrar_intento_incorrecto() -> void:
 	incorrect_attempts += 1
+	print("Errores:", incorrect_attempts)
+
+	if incorrect_attempts >= 4:
+		game_over()
 
 func marcar_supervisor_aprobado() -> void:
 	supervisor_aprobado = true
+
+	if has_node("UI/InteractLabel"):
+		$UI/InteractLabel.text = "Go to the wall panel"
+
+	generar_codigo_puerta()
+	mostrar_codigo_supervisor()
+
+func generar_codigo_puerta() -> void:
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+
+	codigo_puerta = ""
+	for i in range(4):
+		codigo_puerta += str(rng.randi_range(0, 9))
+
+	print("Código generado:", codigo_puerta)
+
+func mostrar_codigo_supervisor() -> void:
+	if code_dialog != null:
+		code_dialog.mostrar_codigo(codigo_puerta)
+
+func desbloquear_puerta_por_codigo() -> void:
+	panel_desbloqueado = true
 	actualizar_lampara()
 
 	if has_node("UI/InteractLabel"):
-		$UI/InteractLabel.text = "The door is now open"
+		$UI/InteractLabel.text = "Door unlocked"
 
 	if has_node("Door"):
 		$Door.abrir_puerta()
@@ -67,3 +101,21 @@ func obtener_tiempo_formateado() -> String:
 	var minutes = total_seconds / 60
 	var seconds = total_seconds % 60
 	return "%02d:%02d" % [minutes, seconds]
+
+func tiempo_actual() -> String:
+	var elapsed_ms = Time.get_ticks_msec() - start_time_ms
+	var total_seconds = int(elapsed_ms / 1000)
+	var minutes = total_seconds / 60
+	var seconds = total_seconds % 60
+	return "%02d:%02d" % [minutes, seconds]
+
+func game_over() -> void:
+	print("GAME OVER")
+
+	if quiz_window != null and quiz_window.visible:
+		quiz_window.hide()
+
+	if keypad_window != null and keypad_window.visible:
+		keypad_window.hide()
+
+	level_complete_window.mostrar_resultados(tiempo_actual(), incorrect_attempts)

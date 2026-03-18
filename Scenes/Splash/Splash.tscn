@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4rjhawb8yx45" path="res://Scripts/Levels/splash.gd" id="1_qowkc"]
 [ext_resource type="Texture2D" uid="uid://c2pkokto322bh" path="res://Assets/Backgrounds/Splash.jpeg" id="2_eiwyq"]
+[ext_resource type="AudioStream" uid="uid://bntes2fskchh3" path="res://Assets/Audios/Splash.wav" id="3_eiwyq"]
 
 [node name="Splash" type="Control" unique_id=908618917]
 layout_mode = 3
@@ -35,3 +36,8 @@ offset_right = 891.0
 offset_bottom = 529.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="SfxButton" type="AudioStreamPlayer2D" parent="." unique_id=506472694]
+stream = ExtResource("3_eiwyq")
+volume_db = -8.0
+autoplay = true

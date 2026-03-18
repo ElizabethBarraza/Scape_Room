@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var sfx_steps = $SfxSteps
 
 const SPEED = 200
 var last_direction = "down"
@@ -27,6 +28,12 @@ func _physics_process(delta):
 
 	velocity = direction * SPEED
 	move_and_slide()
+	
+	if direction != Vector2.ZERO:
+		if not sfx_steps.playing:
+			sfx_steps.play()
+	else:
+		sfx_steps.stop()
 
 	update_animation(direction)
 
