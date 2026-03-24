@@ -1,11 +1,5 @@
 extends Panel
 
-# Ruta correcta según tu árbol:
-# DialogBox
-#  └ MarginContainer
-#     └ HBoxContainer
-#        └ VBoxContainer
-#           └ LabelText (Label)
 @onready var label: Label = $MarginContainer/HBoxContainer/VBoxContainer/LabelText
 
 var mostrando: bool = false
@@ -14,10 +8,10 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	visible = false
 
-	# Para que el texto se vea completo:
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	label.custom_minimum_size = Vector2(500, 120)
 
 func mostrar_texto(texto: String) -> void:
 	if label == null:
@@ -28,10 +22,7 @@ func mostrar_texto(texto: String) -> void:
 	visible = true
 	mostrando = true
 
-	# Pausa el juego, pero este panel sigue funcionando por PROCESS_MODE_ALWAYS
 	get_tree().paused = true
-
-	# Asegura que reciba input aunque no tenga focus
 	set_process_input(true)
 	grab_focus()
 

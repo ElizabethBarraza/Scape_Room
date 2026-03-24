@@ -7,39 +7,38 @@ const SPEED = 200
 var last_direction = "down"
 
 func _physics_process(delta):
-
-	var direction = Vector2.ZERO
+	var input_direction = Vector2.ZERO
 
 	if Input.is_action_pressed("move_right"):
-		direction.x = 1
+		input_direction.x = 1
 		last_direction = "right"
-
 	elif Input.is_action_pressed("move_left"):
-		direction.x = -1
+		input_direction.x = -1
 		last_direction = "left"
-
 	elif Input.is_action_pressed("move_down"):
-		direction.y = 1
+		input_direction.y = 1
 		last_direction = "down"
-
 	elif Input.is_action_pressed("move_up"):
-		direction.y = -1
+		input_direction.y = -1
 		last_direction = "up"
 
-	velocity = direction * SPEED
+	velocity = input_direction * SPEED
 	move_and_slide()
-	
-	if direction != Vector2.ZERO:
+
+	# Movimiento real después de colisiones
+	var real_movement = get_last_motion()
+
+	# Sonido de pasos solo si realmente se está moviendo
+	if real_movement.length() > 0.1:
 		if not sfx_steps.playing:
 			sfx_steps.play()
 	else:
 		sfx_steps.stop()
 
-	update_animation(direction)
+	update_animation(real_movement)
 
-func update_animation(direction):
-
-	if direction == Vector2.ZERO:
+func update_animation(real_movement: Vector2):
+	if real_movement.length() <= 0.1:
 		sprite.play("idle_" + last_direction)
 	else:
 		sprite.play("walk_" + last_direction)

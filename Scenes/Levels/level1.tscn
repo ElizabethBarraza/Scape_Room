@@ -389,7 +389,7 @@ size = Vector2(17, 50)
 
 [node name="level1" unique_id=770697526 instance=ExtResource("1_7u4ml")]
 script = ExtResource("2_hkfpk")
-texto_inicial = "Read the cards on the table and then approach the supervisor to answer their questions."
+texto_inicial = "Read the cards on the table and then approach the supervisor to answer his questions."
 
 [node name="PlayerSpawn" parent="." index="0" unique_id=1852899466]
 position = Vector2(590, 363)
@@ -1060,6 +1060,17 @@ text = "Enter"
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 horizontal_alignment = 1
+
+[node name="HintLabel" type="Label" parent="UI" index="7" unique_id=23100036]
+visible = false
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
+offset_left = 421.0
+offset_top = 23.0
+offset_right = 595.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 25
+text = "\"\""
 
 [node name="Supervisor" type="StaticBody2D" parent="." index="7" unique_id=1165071628]
 position = Vector2(984, 307)

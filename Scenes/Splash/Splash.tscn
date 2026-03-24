@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkohd6py3o6th"]
 
 [ext_resource type="Script" uid="uid://b4rjhawb8yx45" path="res://Scripts/Levels/splash.gd" id="1_qowkc"]
-[ext_resource type="Texture2D" uid="uid://c2pkokto322bh" path="res://Assets/Backgrounds/Splash.jpeg" id="2_eiwyq"]
+[ext_resource type="Texture2D" uid="uid://bk3ycllncw1ri" path="res://Assets/Backgrounds/Splash.jpeg" id="2_eiwyq"]
 [ext_resource type="AudioStream" uid="uid://bntes2fskchh3" path="res://Assets/Audios/Splash.wav" id="3_eiwyq"]
 
 [node name="Splash" type="Control" unique_id=908618917]

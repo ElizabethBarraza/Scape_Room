@@ -17,6 +17,7 @@ extends Panel
 @onready var btn_enter: Button = $CenterContainer/MainPanel/MarginContainer/VBoxContainer/GridContainer/BtnEnter
 
 var codigo_ingresado: String = ""
+var codigo_correcto: bool = false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -38,6 +39,7 @@ func _ready() -> void:
 
 func abrir_keypad() -> void:
 	codigo_ingresado = ""
+	codigo_correcto = false
 	input_label.text = "_ _ _ _"
 	feedback_label.text = ""
 	feedback_label.modulate = Color(1, 1, 1)
@@ -47,6 +49,10 @@ func abrir_keypad() -> void:
 func cerrar_keypad() -> void:
 	hide()
 	get_tree().paused = false
+
+	# Mostrar ayuda solo si cerró sin ingresar el código correcto
+	if not codigo_correcto:
+		mostrar_mensaje_supervisor()
 
 func _input(event: InputEvent) -> void:
 	if not visible:
@@ -78,6 +84,7 @@ func _on_enter_pressed() -> void:
 		return
 
 	if codigo_ingresado == nivel.codigo_puerta:
+		codigo_correcto = true
 		feedback_label.text = "Correct code!"
 		feedback_label.modulate = Color(0.4, 1.0, 0.4)
 		nivel.desbloquear_puerta_por_codigo()
@@ -99,3 +106,21 @@ func actualizar_input() -> void:
 			mostrado += "_ "
 
 	input_label.text = mostrado.strip_edges()
+
+func mostrar_mensaje_supervisor() -> void:
+	var nivel = get_tree().current_scene
+
+	if nivel == null:
+		return
+
+	# Busca un Label llamado HintLabel dentro del nivel actual
+	var hint_label = nivel.get_node_or_null("UI/HintLabel")
+
+	if hint_label != null:
+		hint_label.text = "Go to the supervisor to repeat the code"
+		hint_label.visible = true
+
+		await get_tree().create_timer(8.0, false).timeout
+
+		if is_instance_valid(hint_label):
+			hint_label.visible = false

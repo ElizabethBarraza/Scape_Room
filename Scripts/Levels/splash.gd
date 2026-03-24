@@ -2,7 +2,7 @@ extends Control
 
 @onready var loading_bar = $LoadingBar
 
-var load_time = 6.0
+var load_time = 7.0
 var elapsed = 0.0
 
 func _process(delta):
