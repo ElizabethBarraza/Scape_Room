@@ -1,0 +1,5 @@
+project.godot
+export_presets.cfg
+Scenes
+Scripts
+Assets
