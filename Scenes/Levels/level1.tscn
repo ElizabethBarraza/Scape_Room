@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b35amy8gwkfq7" path="res://Assets/Backgrounds/Toro.png" id="8_i36j2"]
 [ext_resource type="AudioStream" uid="uid://bw1hhyuxifb6d" path="res://Assets/Audios/Card.wav" id="8_rr7wi"]
 [ext_resource type="Script" uid="uid://dbsj020cufn72" path="res://Scripts/Levels/quiz_window.gd" id="10_4f2fw"]
-[ext_resource type="Texture2D" uid="uid://bld5onbisgnyh" path="res://Assets/supervisor/down/1.png" id="10_ir7pk"]
+[ext_resource type="Texture2D" uid="uid://b4fqriu8rjsfm" path="res://Assets/supervisor/down/1.png" id="10_ir7pk"]
 [ext_resource type="Script" uid="uid://c4jjkjkfqfi5a" path="res://Scripts/Players/supervisor_detector.gd" id="11_4f2fw"]
 [ext_resource type="Script" uid="uid://btsrhv6ctsbw8" path="res://Scripts/Levels/level_complete_window.gd" id="11_60msr"]
 [ext_resource type="Texture2D" uid="uid://7lsq76dnj460" path="res://Assets/Sprites/StarYellow.png" id="11_f8if4"]
@@ -27,21 +27,35 @@
 [ext_resource type="Script" uid="uid://7ks81hb348aq" path="res://Scripts/Levels/code_dialog.gd" id="18_oi13q"]
 [ext_resource type="Texture2D" uid="uid://cwt05fntghs1u" path="res://Assets/Door/cones.png" id="19_syfhk"]
 [ext_resource type="Script" uid="uid://cd01avrsyoh7r" path="res://Scripts/Levels/keypad_window.gd" id="19_we4kv"]
+[ext_resource type="Script" uid="uid://dehyu1e143guw" path="res://Scripts/Levels/supervisor_Name.gd" id="20_tm83v"]
 [ext_resource type="Texture2D" uid="uid://dhalgmxgsk5lu" path="res://Assets/Door/box.png" id="20_u45xj"]
 [ext_resource type="Texture2D" uid="uid://xf3e1k6w5n7p" path="res://Assets/Door/lamp.png" id="21_5y6uu"]
 [ext_resource type="Texture2D" uid="uid://bjdfssbv1atu3" path="res://Assets/Door/machine.png" id="22_6748a"]
+[ext_resource type="Texture2D" uid="uid://bbn5sccw66rdb" path="res://Assets/supervisor/down/2.png" id="22_ybker"]
 [ext_resource type="Texture2D" uid="uid://cffedym3o23rw" path="res://Assets/Door/boxes.png" id="23_5y6uu"]
 [ext_resource type="AudioStream" uid="uid://dvj5nb3km7j6y" path="res://Assets/Audios/door-opening.wav" id="24_3gtsu"]
 [ext_resource type="Texture2D" uid="uid://cwbygr38y8a15" path="res://Assets/Door/machine2.png" id="24_m4h5f"]
 [ext_resource type="Texture2D" uid="uid://p0pbdypan3bk" path="res://Assets/Door/machine1.png" id="25_d2e0u"]
 [ext_resource type="Texture2D" uid="uid://bvk7go0uwmcs2" path="res://Assets/Door/machine3.png" id="28_4xs7e"]
 [ext_resource type="Texture2D" uid="uid://pc7w0tgdmb0j" path="res://Assets/Door/PrimeroAuxilios.png" id="29_ilop2"]
+[ext_resource type="Script" uid="uid://du1bcsbl6q8bi" path="res://Scripts/Levels/ObjectLabel.gd" id="30_b7vli"]
 [ext_resource type="Texture2D" uid="uid://ch82f1kvygdy8" path="res://Assets/Door/Extintor.png" id="30_lqrgo"]
 [ext_resource type="AudioStream" uid="uid://chg5xffpwfmce" path="res://Assets/Audios/correct-answer.wav" id="31_lqrgo"]
+[ext_resource type="Script" uid="uid://d3a3v85ejmxn3" path="res://Scripts/Levels/box_2.gd" id="32_ducbq"]
+[ext_resource type="Script" uid="uid://cbewtytgge4ri" path="res://Scripts/Levels/box_3.gd" id="34_bg0ge"]
 [ext_resource type="Script" uid="uid://d07d8spf34bma" path="res://Scripts/Levels/panel_detector.gd" id="35_86v4d"]
+[ext_resource type="Script" uid="uid://cbqlvqn84gsoo" path="res://Scripts/Levels/box_4.gd" id="35_310r7"]
 [ext_resource type="AudioStream" uid="uid://dfy22fn34hdrw" path="res://Assets/Audios/Ambient.wav" id="36_awofh"]
+[ext_resource type="Script" uid="uid://c5eitiq4gpxbk" path="res://Scripts/Levels/machine.gd" id="36_tybo4"]
+[ext_resource type="Script" uid="uid://bxxgdp14pnv1n" path="res://Scripts/Levels/boxes.gd" id="38_rbk4v"]
+[ext_resource type="Script" uid="uid://d4nblt8f6qbhm" path="res://Scripts/Levels/wallpanel1.gd" id="40_tm83v"]
+[ext_resource type="Script" uid="uid://dk5kv58yvwxxb" path="res://Scripts/Levels/control_panel.gd" id="43_k5svh"]
+[ext_resource type="Script" uid="uid://chiqypdlava71" path="res://Scripts/Levels/machine_4.gd" id="45_s0qlf"]
+[ext_resource type="Script" uid="uid://dus3yi15dwupw" path="res://Scripts/Levels/primeros_auxilios.gd" id="47_i1qbx"]
+[ext_resource type="Script" uid="uid://cq6buu763ikj6" path="res://Scripts/Levels/extintor.gd" id="49_5d3tx"]
+[ext_resource type="Script" uid="uid://bq0sghjdu64lp" path="res://Scripts/Levels/extintor_2.gd" id="52_50rkd"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xrym"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50rkd"]
 texture = ExtResource("3_1ukdm")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
@@ -63,13 +77,13 @@ texture = ExtResource("3_1ukdm")
 [sub_resource type="TileSet" id="TileSet_c0r4e"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_0xrym")
+sources/0 = SubResource("TileSetAtlasSource_50rkd")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20uw2"]
 size = Vector2(147.4375, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i36j2"]
-size = Vector2(159, 52)
+size = Vector2(159, 80)
 
 [sub_resource type="SystemFont" id="SystemFont_20uw2"]
 
@@ -313,8 +327,22 @@ bg_color = Color(0.05882353, 0.17254902, 0.32156864, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6va14"]
 bg_color = Color(0.14117648, 0.32156864, 0.54901963, 1)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ggop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ir7pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ybker")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilsv2"]
-size = Vector2(43, 95)
+size = Vector2(43, 119)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f2fw"]
 size = Vector2(47, 103)
@@ -340,34 +368,52 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syfhk"]
-size = Vector2(108, 138)
+size = Vector2(114, 101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u45xj"]
-size = Vector2(108, 133)
+size = Vector2(78, 136.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ay16s"]
 size = Vector2(46, 48)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ducbq"]
+size = Vector2(59.75, 83.5625)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4h5f"]
 size = Vector2(66.5, 81.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ge"]
+size = Vector2(85.21875, 129.60938)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6748a"]
 size = Vector2(123.25, 120.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_310r7"]
+size = Vector2(128, 144.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5y6uu"]
 size = Vector2(61, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tybo4"]
+size = Vector2(83.25, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2e0u"]
 size = Vector2(63.75728, 42.54229)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbk4v"]
+size = Vector2(589.3125, 139)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8if4"]
-size = Vector2(64.08089, 44.781372)
+size = Vector2(64.08089, 42.542282)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60msr"]
 size = Vector2(63.109978, 42.542263)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqpl7"]
 size = Vector2(78.75, 67.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02o20"]
+size = Vector2(96.328125, 126.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5o2p"]
 size = Vector2(55, 37)
@@ -376,13 +422,22 @@ size = Vector2(55, 37)
 size = Vector2(70, 101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilop2"]
-size = Vector2(809, 110)
+size = Vector2(809, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0qlf"]
+size = Vector2(132.54102, 150.65625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqrgo"]
-size = Vector2(226.5, 192)
+size = Vector2(226.5, 189)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1qbx"]
+size = Vector2(238, 229)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e7vy"]
 size = Vector2(224, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d3tx"]
+size = Vector2(38.5, 55.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtsu"]
 size = Vector2(17, 50)
@@ -417,9 +472,9 @@ script = ExtResource("4_c0r4e")
 
 [node name="Sprite2D" type="Sprite2D" parent="Mesa" index="0" unique_id=158305180]
 texture_filter = 1
-position = Vector2(522.00006, 116.000015)
+position = Vector2(518.87164, 111.7509)
 rotation = 0.0012994561
-scale = Vector2(2.74459, 2.2534835)
+scale = Vector2(0.108880654, 0.10701757)
 texture = ExtResource("6_ir7pk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesa" index="1" unique_id=725818224]
@@ -432,21 +487,32 @@ position = Vector2(506, 207)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesa/Detector" index="0" unique_id=619497466]
 light_mask = 2
-position = Vector2(16, -95)
+position = Vector2(16, -81)
 shape = SubResource("RectangleShape2D_i36j2")
+
+[node name="NameLabel" type="Label" parent="Mesa" index="3" unique_id=411002724]
+visible = false
+offset_left = 467.0
+offset_top = 52.0
+offset_right = 576.0
+offset_bottom = 83.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Work Table"
 
 [node name="UI" type="CanvasLayer" parent="." index="6" unique_id=1056635253]
 
 [node name="InteractLabel" type="Label" parent="UI" index="0" unique_id=667164011]
 visible = false
-modulate = Color(0.00039445335, 0.00039445335, 0.00039445335, 1)
-self_modulate = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
-offset_left = 315.0
-offset_top = 17.0
-offset_right = 436.0
-offset_bottom = 55.0
+modulate = Color(0.98586935, 0.98586947, 0.98586935, 1)
+self_modulate = Color(0.98939866, 0.98939866, 0.98939854, 1)
+offset_left = 338.0
+offset_top = -4.0
+offset_right = 459.0
+offset_bottom = 30.0
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 24
-text = "Press to E"
+text = "Press E"
 
 [node name="MiniGameWindow" type="Panel" parent="UI" index="1" unique_id=1498582458]
 process_mode = 3
@@ -483,7 +549,7 @@ grow_vertical = 2
 
 [node name="Titulo" type="Label" parent="UI/MiniGameWindow/VBoxContainer" index="0" unique_id=403838327]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.00039445335, 0.00039445335, 0.00039445335, 1)
+theme_override_colors/font_color = Color(0.9929301, 0.9929301, 0.99293, 1)
 theme_override_font_sizes/font_size = 28
 text = "Press ESC to exit"
 horizontal_alignment = 1
@@ -517,6 +583,7 @@ stream = ExtResource("8_rr7wi")
 volume_db = -30.0
 
 [node name="DialogBox" type="Panel" parent="UI" index="2" unique_id=1754792432]
+visible = false
 custom_minimum_size = Vector2(180, 220)
 anchors_preset = 12
 anchor_top = 1.0
@@ -684,7 +751,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("11_60msr")
-next_level_path = "res://Scenes/levels/level2.tscn"
 
 [node name="Overlay" type="ColorRect" parent="UI/LevelCompleteWindow" index="0" unique_id=1194308895]
 layout_mode = 1
@@ -1063,25 +1129,31 @@ horizontal_alignment = 1
 
 [node name="HintLabel" type="Label" parent="UI" index="7" unique_id=23100036]
 visible = false
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
+modulate = Color(0.98586935, 0.98586947, 0.98586935, 1)
+self_modulate = Color(0.9542096, 0.95420974, 0.9542095, 1)
 offset_left = 421.0
 offset_top = 23.0
 offset_right = 595.0
 offset_bottom = 89.0
+theme_override_colors/font_color = Color(0.98939866, 0.98939866, 0.98939854, 1)
+theme_override_colors/font_outline_color = Color(0.98939866, 0.98939866, 0.98939854, 1)
 theme_override_font_sizes/font_size = 25
 text = "\"\""
 
-[node name="Supervisor" type="StaticBody2D" parent="." index="7" unique_id=1165071628]
+[node name="Supervisor" type="StaticBody2D" parent="." index="7" unique_id=173332836]
 position = Vector2(984, 307)
 collision_mask = 3
+script = ExtResource("20_tm83v")
+object_name = "Supervisor"
 
-[node name="Sprite2D" type="Sprite2D" parent="Supervisor" index="0" unique_id=353536684]
-scale = Vector2(2, 2)
-texture = ExtResource("10_ir7pk")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Supervisor" index="0" unique_id=172617580]
+position = Vector2(6.999992, -1.0000086)
+scale = Vector2(1.9062498, 2.0625)
+sprite_frames = SubResource("SpriteFrames_5ggop")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Supervisor" index="1" unique_id=2068439125]
-position = Vector2(-3.5, 13.5)
+position = Vector2(-3.5, 1.5)
 shape = SubResource("RectangleShape2D_ilsv2")
 
 [node name="Detector" type="Area2D" parent="Supervisor" index="2" unique_id=1486307408]
@@ -1094,6 +1166,16 @@ interact_label_path = NodePath("../../UI/InteractLabel")
 position = Vector2(-2.5, 15.5)
 shape = SubResource("RectangleShape2D_4f2fw")
 
+[node name="NameLabel" type="Label" parent="Supervisor" index="3" unique_id=1049886706]
+visible = false
+offset_left = -54.0
+offset_top = -65.0
+offset_right = 50.0
+offset_bottom = -37.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Supervisor"
+
 [node name="Door" type="StaticBody2D" parent="." index="8" unique_id=1126082930]
 position = Vector2(-5, 23)
 script = ExtResource("13_v3vqe")
@@ -1105,7 +1187,7 @@ sprite_frames = SubResource("SpriteFrames_6748a")
 animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" index="1" unique_id=1345572929]
-position = Vector2(872, 95)
+position = Vector2(877, 89.5)
 shape = SubResource("RectangleShape2D_syfhk")
 
 [node name="Detector" type="Area2D" parent="Door" index="2" unique_id=1104822792]
@@ -1113,7 +1195,7 @@ position = Vector2(-4, -2)
 script = ExtResource("18_bvs0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Detector" index="0" unique_id=701339987]
-position = Vector2(879, 92.5)
+position = Vector2(883, 102)
 shape = SubResource("RectangleShape2D_u45xj")
 
 [node name="DoorLamp" type="Sprite2D" parent="Door" index="3" unique_id=1905969771]
@@ -1126,7 +1208,18 @@ texture = ExtResource("21_5y6uu")
 stream = ExtResource("24_3gtsu")
 volume_db = -6.0
 
+[node name="NameLabel" type="Label" parent="Door" index="5" unique_id=619227162]
+visible = false
+offset_left = 828.0
+offset_top = 13.0
+offset_right = 876.0
+offset_bottom = 41.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Door"
+
 [node name="Cono" type="StaticBody2D" parent="." index="9" unique_id=554795939]
+script = ExtResource("30_b7vli")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cono" index="0" unique_id=631188187]
 texture_filter = 5
@@ -1138,9 +1231,28 @@ visibility_layer = 3
 position = Vector2(670, 96)
 shape = SubResource("RectangleShape2D_ay16s")
 
+[node name="Detector" type="Area2D" parent="Cono" index="2" unique_id=1259459551]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cono/Detector" index="0" unique_id=947937208]
+position = Vector2(676.75, 111.4375)
+shape = SubResource("RectangleShape2D_ducbq")
+
+[node name="NameLabel" type="Label" parent="Cono" index="3" unique_id=1722765769]
+visible = false
+offset_left = 617.0
+offset_top = 48.0
+offset_right = 729.0
+offset_bottom = 76.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Safety cone"
+
 [node name="Box2" type="StaticBody2D" parent="." index="10" unique_id=1097560248]
 texture_filter = 5
 position = Vector2(257, 116)
+script = ExtResource("32_ducbq")
+object_name = "Wooden Crate"
 
 [node name="Sprite2D" type="Sprite2D" parent="Box2" index="0" unique_id=1005222938]
 texture_filter = 1
@@ -1153,8 +1265,27 @@ visibility_layer = 3
 position = Vector2(373, 391)
 shape = SubResource("RectangleShape2D_m4h5f")
 
+[node name="Detector" type="Area2D" parent="Box2" index="2" unique_id=1865878960]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2/Detector" index="0" unique_id=1776481536]
+position = Vector2(386.78125, 400.1953)
+shape = SubResource("RectangleShape2D_bg0ge")
+
+[node name="NameLabel" type="Label" parent="Box2" index="3" unique_id=721178249]
+visible = false
+offset_left = 346.0
+offset_top = 407.0
+offset_right = 386.0
+offset_bottom = 435.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Box"
+
 [node name="Box3" type="StaticBody2D" parent="." index="11" unique_id=1948355530]
 position = Vector2(257, 116)
+script = ExtResource("34_bg0ge")
+object_name = "Wooden Crate"
 
 [node name="Sprite2D" type="Sprite2D" parent="Box3" index="0" unique_id=309751281]
 texture_filter = 1
@@ -1167,8 +1298,27 @@ visibility_layer = 3
 position = Vector2(608, 452.25)
 shape = SubResource("RectangleShape2D_6748a")
 
+[node name="Detector" type="Area2D" parent="Box3" index="2" unique_id=109228600]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3/Detector" index="0" unique_id=435918369]
+position = Vector2(612, 443.75)
+shape = SubResource("RectangleShape2D_310r7")
+
+[node name="NameLabel" type="Label" parent="Box3" index="3" unique_id=1811273951]
+visible = false
+offset_left = 557.0
+offset_top = 475.0
+offset_right = 597.0
+offset_bottom = 503.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Box"
+
 [node name="Box4" type="StaticBody2D" parent="." index="12" unique_id=167655792]
 position = Vector2(257, 116)
+script = ExtResource("35_310r7")
+object_name = "Wooden Crate"
 
 [node name="Sprite2D" type="Sprite2D" parent="Box4" index="0" unique_id=601680870]
 texture_filter = 1
@@ -1181,7 +1331,26 @@ visibility_layer = 3
 position = Vector2(716.5, 415.5)
 shape = SubResource("RectangleShape2D_5y6uu")
 
+[node name="Detector" type="Area2D" parent="Box4" index="2" unique_id=664411558]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box4/Detector" index="0" unique_id=1191234485]
+position = Vector2(724.75, 425)
+shape = SubResource("RectangleShape2D_tybo4")
+
+[node name="NameLabel" type="Label" parent="Box4" index="3" unique_id=185447972]
+visible = false
+offset_left = 694.0
+offset_top = 384.0
+offset_right = 734.0
+offset_bottom = 412.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Box"
+
 [node name="Machine" type="StaticBody2D" parent="." index="13" unique_id=842260854]
+script = ExtResource("36_tybo4")
+object_name = "Conveyor Blet"
 
 [node name="Sprite2D" type="Sprite2D" parent="Machine" index="0" unique_id=1895994395]
 visibility_layer = 3
@@ -1196,6 +1365,23 @@ position = Vector2(99.50001, 488)
 scale = Vector2(3.089843, 2.6796873)
 shape = SubResource("RectangleShape2D_d2e0u")
 
+[node name="Detector" type="Area2D" parent="Machine" index="2" unique_id=2087214485]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/Detector" index="0" unique_id=2105738340]
+position = Vector2(307.34375, 487.5)
+shape = SubResource("RectangleShape2D_rbk4v")
+
+[node name="NameLabel" type="Label" parent="Machine" index="3" unique_id=571989879]
+visible = false
+offset_left = 55.0
+offset_top = 431.0
+offset_right = 190.0
+offset_bottom = 459.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Conveyor Belt"
+
 [node name="Machine2" type="StaticBody2D" parent="." index="14" unique_id=139530483]
 
 [node name="Sprite2D" type="Sprite2D" parent="Machine2" index="0" unique_id=1750403076]
@@ -1207,9 +1393,19 @@ texture = ExtResource("22_6748a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Machine2" index="1" unique_id=1501094291]
 visibility_layer = 3
-position = Vector2(297.00003, 491.00003)
+position = Vector2(297.00003, 488)
 scale = Vector2(3.0898433, 2.6796873)
 shape = SubResource("RectangleShape2D_f8if4")
+
+[node name="NameLabel" type="Label" parent="Machine2" index="2" unique_id=789879569]
+visible = false
+offset_left = 421.0
+offset_top = 432.0
+offset_right = 556.0
+offset_bottom = 460.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Conveyor Belt"
 
 [node name="Machine3" type="StaticBody2D" parent="." index="15" unique_id=1546522071]
 
@@ -1226,7 +1422,19 @@ position = Vector2(493.49994, 488)
 scale = Vector2(3.0898433, 2.6796873)
 shape = SubResource("RectangleShape2D_60msr")
 
+[node name="NameLabel" type="Label" parent="Machine3" index="2" unique_id=135204926]
+visible = false
+offset_left = 36.0
+offset_top = 433.0
+offset_right = 171.0
+offset_bottom = 461.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Conveyor Belt"
+
 [node name="Boxes" type="StaticBody2D" parent="." index="16" unique_id=723806433]
+script = ExtResource("38_rbk4v")
+object_name = "Wooden Crate"
 
 [node name="Sprite2D" type="Sprite2D" parent="Boxes" index="0" unique_id=1424646497]
 texture_filter = 1
@@ -1238,11 +1446,30 @@ texture = ExtResource("23_5y6uu")
 position = Vector2(43, 195)
 shape = SubResource("RectangleShape2D_iqpl7")
 
+[node name="Detector" type="Area2D" parent="Boxes" index="2" unique_id=336273858]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boxes/Detector" index="0" unique_id=1991843302]
+position = Vector2(51.835938, 196.625)
+shape = SubResource("RectangleShape2D_02o20")
+
+[node name="NameLabel" type="Label" parent="Boxes" index="3" unique_id=27980035]
+visible = false
+offset_left = 39.0
+offset_top = 151.0
+offset_right = 79.0
+offset_bottom = 179.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Box"
+
 [node name="PanelPared" type="StaticBody2D" parent="." index="17" unique_id=1993779093]
+script = ExtResource("40_tm83v")
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelPared" index="0" unique_id=573814495]
-texture_filter = 1
-position = Vector2(773, 80)
+texture_filter = 6
+position = Vector2(774, 83)
+scale = Vector2(0.078014225, 0.08620687)
 texture = ExtResource("24_m4h5f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PanelPared" index="1" unique_id=1975498550]
@@ -1259,39 +1486,84 @@ interact_label_path = NodePath("../../UI/InteractLabel")
 position = Vector2(771, 104.5)
 shape = SubResource("RectangleShape2D_b7vli")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="18" unique_id=2099084693]
+[node name="NameLabel" type="Label" parent="PanelPared" index="3" unique_id=552021534]
+visible = false
+offset_left = 727.0
+offset_top = 28.0
+offset_right = 828.0
+offset_bottom = 59.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Wall Panel"
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" index="0" unique_id=1183814220]
+[node name="ControlPanel" type="StaticBody2D" parent="." index="18" unique_id=2099084693]
+script = ExtResource("43_k5svh")
+object_name = "Control Panel"
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlPanel" index="0" unique_id=1183814220]
 texture_filter = 1
-position = Vector2(191, 76)
-scale = Vector2(2.0781252, 1.8000001)
+position = Vector2(212.99416, 84.47502)
+scale = Vector2(0.13869904, 0.12413579)
 texture = ExtResource("25_d2e0u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1" unique_id=1546210931]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ControlPanel" index="1" unique_id=1546210931]
 visibility_layer = 3
-position = Vector2(405, 63)
+position = Vector2(405, 53)
 shape = SubResource("RectangleShape2D_ilop2")
 
+[node name="Detector" type="Area2D" parent="ControlPanel" index="2" unique_id=667634926]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ControlPanel/Detector" index="0" unique_id=265162334]
+position = Vector2(215, 78)
+shape = SubResource("RectangleShape2D_s0qlf")
+
+[node name="NameLabel" type="Label" parent="ControlPanel" index="3" unique_id=285392890]
+visible = false
+offset_left = 127.0
+offset_top = 14.0
+offset_right = 258.0
+offset_bottom = 42.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Control Panel"
+
 [node name="Machine4" type="StaticBody2D" parent="." index="19" unique_id=1904164344]
+script = ExtResource("45_s0qlf")
+object_name = "Industrial Machine"
 
 [node name="Sprite2D" type="Sprite2D" parent="Machine4" index="0" unique_id=595384268]
 texture_filter = 1
-position = Vector2(282, 304)
+position = Vector2(286.00003, 292.00006)
 rotation = 0.0051435865
-scale = Vector2(4.524646, 5.395066)
+scale = Vector2(0.16821027, 0.20696875)
 texture = ExtResource("28_4xs7e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Machine4" index="1" unique_id=120264930]
 visibility_layer = 3
-position = Vector2(282, 275)
+position = Vector2(282, 265.5)
 shape = SubResource("RectangleShape2D_lqrgo")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Machine4" index="2" unique_id=889331826]
-visibility_layer = 3
-position = Vector2(281.75, 274)
-shape = SubResource("RectangleShape2D_lqrgo")
+[node name="Detector" type="Area2D" parent="Machine4" index="2" unique_id=1792162712]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine4/Detector" index="0" unique_id=757044984]
+position = Vector2(286, 291.5)
+shape = SubResource("RectangleShape2D_i1qbx")
+
+[node name="NameLabel" type="Label" parent="Machine4" index="3" unique_id=1748685984]
+visible = false
+offset_left = 191.0
+offset_top = 184.0
+offset_right = 372.0
+offset_bottom = 219.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Industrial Machine"
 
 [node name="PrimerosAuxilios" type="StaticBody2D" parent="." index="20" unique_id=1433528982]
+script = ExtResource("47_i1qbx")
+object_name = "First Aid Kit"
 
 [node name="Sprite2D" type="Sprite2D" parent="PrimerosAuxilios" index="0" unique_id=471643888]
 position = Vector2(991, 65)
@@ -1303,7 +1575,26 @@ visibility_layer = 3
 position = Vector2(1040, 51)
 shape = SubResource("RectangleShape2D_7e7vy")
 
+[node name="Detector" type="Area2D" parent="PrimerosAuxilios" index="2" unique_id=1924413551]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PrimerosAuxilios/Detector" index="0" unique_id=1967448290]
+position = Vector2(995, 85.75)
+shape = SubResource("RectangleShape2D_5d3tx")
+
+[node name="NameLabel" type="Label" parent="PrimerosAuxilios" index="3" unique_id=910934096]
+visible = false
+offset_left = 943.0
+offset_top = 17.0
+offset_right = 1054.0
+offset_bottom = 45.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "First Aid Kit"
+
 [node name="Extintor" type="StaticBody2D" parent="." index="21" unique_id=174337876]
+script = ExtResource("49_5d3tx")
+object_name = "Fire Extinguisher"
 
 [node name="Sprite2D" type="Sprite2D" parent="Extintor" index="0" unique_id=2143242819]
 position = Vector2(19.000002, 601)
@@ -1315,7 +1606,26 @@ visibility_layer = 3
 position = Vector2(18.5, 601)
 shape = SubResource("RectangleShape2D_3gtsu")
 
+[node name="Detector" type="Area2D" parent="Extintor" index="2" unique_id=1932668073]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Extintor/Detector" index="0" unique_id=592306582]
+position = Vector2(370, 75)
+shape = SubResource("RectangleShape2D_5d3tx")
+
+[node name="NameLabel" type="Label" parent="Extintor" index="3" unique_id=1525214156]
+visible = false
+offset_left = 290.0
+offset_top = 4.0
+offset_right = 452.0
+offset_bottom = 32.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Fire Extinguisher"
+
 [node name="Extintor2" type="StaticBody2D" parent="." index="22" unique_id=1361539243]
+script = ExtResource("52_50rkd")
+object_name = "Fire Extinguisher"
 
 [node name="Sprite2D" type="Sprite2D" parent="Extintor2" index="0" unique_id=1258898181]
 position = Vector2(367.00003, 56)
@@ -1326,6 +1636,23 @@ texture = ExtResource("30_lqrgo")
 visibility_layer = 3
 position = Vector2(365, 59)
 shape = SubResource("RectangleShape2D_3gtsu")
+
+[node name="Detector" type="Area2D" parent="Extintor2" index="2" unique_id=991316543]
+position = Vector2(-4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Extintor2/Detector" index="0" unique_id=1350934215]
+position = Vector2(25.75, 604)
+shape = SubResource("RectangleShape2D_5d3tx")
+
+[node name="NameLabel" type="Label" parent="Extintor2" index="3" unique_id=816304907]
+visible = false
+offset_left = 4.0
+offset_top = 545.0
+offset_right = 166.0
+offset_bottom = 573.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Fire Extinguisher"
 
 [node name="BgmLevel" type="AudioStreamPlayer2D" parent="." index="23" unique_id=1072150423]
 process_mode = 3

@@ -49,7 +49,7 @@ func _on_play_button_pressed():
 	$SfxButton.play()
 		
 	await get_tree().create_timer(0.15).timeout
-	get_tree().change_scene_to_file("res://Scenes/levels/level1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/transition_screen.tscn")
 	
 
 

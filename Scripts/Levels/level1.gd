@@ -6,7 +6,6 @@ var incorrect_attempts: int = 0
 var start_time_ms: int = 0
 var nivel_completado: bool = false
 
-# Nuevo sistema de código
 var codigo_puerta: String = ""
 var panel_desbloqueado: bool = false
 
@@ -16,6 +15,12 @@ var panel_desbloqueado: bool = false
 @onready var code_dialog = $UI/CodeDialog
 @onready var keypad_window = $UI/KeypadWindow
 
+
+@onready var cards_table = $Mesa
+@onready var supervisor = $Supervisor
+@onready var wall_panel = $PanelPared
+@onready var door = $Door
+
 var lamp_red: Texture2D = preload("res://Assets/Door/lamp.png")
 var lamp_yellow: Texture2D = preload("res://Assets/Door/lamp1.png")
 var lamp_green: Texture2D = preload("res://Assets/Door/lamp2.png")
@@ -24,6 +29,7 @@ func _ready() -> void:
 	super._ready()
 	start_time_ms = Time.get_ticks_msec()
 	actualizar_lampara()
+	
 
 func actualizar_lampara() -> void:
 	if door_lamp == null:
@@ -36,9 +42,11 @@ func actualizar_lampara() -> void:
 	else:
 		door_lamp.texture = lamp_red
 
+
 func marcar_cartas_leidas() -> void:
 	cartas_leidas = true
 	actualizar_lampara()
+
 
 	if has_node("UI/InteractLabel"):
 		$UI/InteractLabel.text = "Go to the supervisor"
@@ -55,6 +63,7 @@ func registrar_intento_incorrecto() -> void:
 
 func marcar_supervisor_aprobado() -> void:
 	supervisor_aprobado = true
+	
 
 	if has_node("UI/InteractLabel"):
 		$UI/InteractLabel.text = "Go to the wall panel"
@@ -79,6 +88,7 @@ func mostrar_codigo_supervisor() -> void:
 func desbloquear_puerta_por_codigo() -> void:
 	panel_desbloqueado = true
 	actualizar_lampara()
+	
 
 	if has_node("UI/InteractLabel"):
 		$UI/InteractLabel.text = "Door unlocked"
@@ -86,14 +96,19 @@ func desbloquear_puerta_por_codigo() -> void:
 	if has_node("Door"):
 		$Door.abrir_puerta()
 
+func show_dialog(message: String) -> void:
+	if code_dialog != null:
+		code_dialog.mostrar_codigo(message)
+
 func completar_nivel() -> void:
 	if nivel_completado:
 		return
 
 	nivel_completado = true
+	
 
 	var tiempo_final = obtener_tiempo_formateado()
-	level_complete_window.mostrar_resultados(tiempo_final, incorrect_attempts)
+	level_complete_window.mostrar_resultados(tiempo_final, incorrect_attempts, false)
 
 func obtener_tiempo_formateado() -> String:
 	var elapsed_ms = Time.get_ticks_msec() - start_time_ms
@@ -112,10 +127,5 @@ func tiempo_actual() -> String:
 func game_over() -> void:
 	print("GAME OVER")
 
-	if quiz_window != null and quiz_window.visible:
-		quiz_window.hide()
 
-	if keypad_window != null and keypad_window.visible:
-		keypad_window.hide()
-
-	level_complete_window.mostrar_resultados(tiempo_actual(), incorrect_attempts)
+	level_complete_window.mostrar_resultados(tiempo_actual(), incorrect_attempts, true)

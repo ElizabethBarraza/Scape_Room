@@ -35,6 +35,10 @@ func _ready() -> void:
 
 # 🔹 ESTA FUNCIÓN SE LLAMA DESDE mesa.gd
 func abrir_minijuego():
+	var nivel = get_tree().current_scene
+	if nivel.has_method("hide_objective_ui"):
+		nivel.hide_objective_ui()
+
 	visible = true
 	get_tree().paused = true
 
@@ -68,5 +72,11 @@ func cerrar_minijuego():
 	get_tree().paused = false
 	
 	var nivel = get_tree().current_scene
+
+	# 🔹 VOLVER A MOSTRAR OBJECTIVE
+	if nivel.has_method("show_objective_ui"):
+		nivel.show_objective_ui()
+
+	# 🔹 LÓGICA DEL NIVEL
 	if nivel.has_method("marcar_cartas_leidas"):
 		nivel.marcar_cartas_leidas()

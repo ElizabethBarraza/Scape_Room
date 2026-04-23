@@ -14,7 +14,7 @@ extends Control
 @onready var btn_replay: Button = $CenterContainer/MainPanel/MarginContainer/VBoxContainer/ButtonsBox/BtnReplay
 @onready var btn_menu: Button = $CenterContainer/MainPanel/MarginContainer/VBoxContainer/ButtonsBox/BtnMenu
 
-@export var next_level_path: String = ""
+@export var next_level_path: String = "res://Scenes/Levels/transition_screen2.tscn"
 @export var main_menu_path: String = "res://Scenes/menu/menu.tscn"
 @onready var sfx_gameover = $SfxGameOver
 @onready var sfx_victory = $SfxVictory
@@ -30,7 +30,7 @@ func _ready() -> void:
 	btn_replay.pressed.connect(_on_btn_replay_pressed)
 	btn_menu.pressed.connect(_on_btn_menu_pressed)
 
-func mostrar_resultados(time_text: String, incorrect_attempts: int) -> void:
+func mostrar_resultados(time_text: String, incorrect_attempts: int, es_game_over: bool) -> void:
 	show()
 	get_tree().paused = true
 
@@ -108,7 +108,7 @@ func actualizar_estrellas(cantidad: int) -> void:
 func _on_btn_next_pressed() -> void:
 	get_tree().paused = false
 	if next_level_path != "":
-		get_tree().change_scene_to_file(next_level_path)
+		get_tree().change_scene_to_file("res://Scenes/Levels/transition_screen2.tscn")
 
 func _on_btn_replay_pressed() -> void:
 	get_tree().paused = false

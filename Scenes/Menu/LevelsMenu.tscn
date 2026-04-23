@@ -20,14 +20,6 @@ corner_detail = 13
 bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
 corner_detail = 11
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isdrj"]
-bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.38431373)
-corner_detail = 11
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1s7m"]
-bg_color = Color(0.18431373, 0.43529412, 0.6901961, 1)
-corner_detail = 11
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk71o"]
 bg_color = Color(0.11764706, 0.22745098, 0.37254903, 0.38431373)
 corner_detail = 11
@@ -110,14 +102,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_hjrt5")
 text = "LEVEL 2"
 autowrap_mode = 2
 
-[node name="Level3Button" type="Button" parent="VBoxContainer" unique_id=523395170]
-custom_minimum_size = Vector2(300, 60)
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_isdrj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t1s7m")
-text = "LEVEL 3"
-
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1787561535]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
@@ -132,4 +116,5 @@ volume_db = -25.0
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level2Button" to="." method="_on_level_2_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

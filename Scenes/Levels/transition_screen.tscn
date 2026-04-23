@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://xhmxllll6058"]
+
+[ext_resource type="Script" uid="uid://cumevqaq3ubes" path="res://Scripts/Levels/transition_screen.gd" id="1_fcmg0"]
+[ext_resource type="Texture2D" uid="uid://4jomgvo8nrq7" path="res://Assets/Backgrounds/Transition.png" id="2_jbvfr"]
+[ext_resource type="AudioStream" uid="uid://f6hp175hiyof" path="res://Assets/Audios/Transition.wav" id="3_l8uqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcmg0"]
+bg_color = Color(0.30588236, 0.47843137, 0.3647059, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7o1rf"]
+bg_color = Color(0.20395032, 0.33903983, 0.24211052, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbvfr"]
+bg_color = Color(0.43137255, 0.64705884, 0.49019608, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8uqs"]
+bg_color = Color(0.41568628, 0.4509804, 0.48235294, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_532t3"]
+bg_color = Color(0.3573325, 0.39154577, 0.4222875, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nim8l"]
+bg_color = Color(0.48235294, 0.52156866, 0.5568628, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="TransitionScreen" type="Control" unique_id=191828517]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fcmg0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1301127031]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+texture = ExtResource("2_jbvfr")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1022199845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1114.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02745098, 0.02745098, 0.02745098, 0.11372549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1401048913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 121.0
+offset_top = 86.0
+offset_right = 969.0
+offset_bottom = 558.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="LabelTitle" type="Label" parent="VBoxContainer" unique_id=1699762870]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Game starts now!!!"
+horizontal_alignment = 1
+
+[node name="LabelDescription" type="Label" parent="VBoxContainer" unique_id=1978880040]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.97187895, 0.9677512, 0.9618749, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "🌟 The journey begins now… are you ready?
+
+Explore the workspace and learn the basic industrial vocabulary"
+horizontal_alignment = 1
+
+[node name="BtnNext" type="Button" parent="VBoxContainer" unique_id=1848393207]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fcmg0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7o1rf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbvfr")
+text = "Continue"
+
+[node name="BtnMenu" type="Button" parent="VBoxContainer" unique_id=83836948]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.9137255, 0.8627451, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_l8uqs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_532t3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nim8l")
+text = "Main Menu"
+
+[node name="SfxTransition" type="AudioStreamPlayer2D" parent="." unique_id=1146930579]
+stream = ExtResource("3_l8uqs")
+volume_db = -8.0
+autoplay = true

@@ -1,14 +1,13 @@
 extends Control
 
 @onready var level2_button = $VBoxContainer/Level2Button
-@onready var level3_button = $VBoxContainer/Level3Button
 @onready var buttons = $VBoxContainer.get_children()
 @onready var title = $title
 var title_original_position
 
 func _ready():
 	level2_button.disabled = true
-	level3_button.disabled = true
+	#level3_button.disabled = true
 	
 	# Guardar posiciones originales
 	title_original_position = title.position
@@ -37,13 +36,10 @@ func _ready():
 		tween.set_ease(Tween.EASE_OUT)
 
 func _on_level_1_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/levels/level1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/transition_screen.tscn")
 
 func _on_level_2_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/levels/level2.tscn")
-
-func _on_level_3_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/levels/level3.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/transition_screen2.tscn")
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/menu/menu.tscn")

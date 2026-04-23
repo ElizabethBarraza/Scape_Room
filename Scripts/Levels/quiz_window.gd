@@ -98,6 +98,11 @@ func _ready() -> void:
 func abrir_quiz() -> void:
 	indice_actual = 0
 	feedback_label.text = ""
+
+	var nivel = get_tree().current_scene
+	if nivel.has_method("hide_objective_ui"):
+		nivel.hide_objective_ui()
+
 	show()
 	get_tree().paused = true
 	mostrar_pregunta()
@@ -105,6 +110,10 @@ func abrir_quiz() -> void:
 func cerrar_quiz() -> void:
 	hide()
 	get_tree().paused = false
+
+	var nivel = get_tree().current_scene
+	if nivel.has_method("show_objective_ui"):
+		nivel.show_objective_ui()
 
 func mostrar_pregunta() -> void:
 	var pregunta = preguntas[indice_actual]
@@ -155,5 +164,8 @@ func cerrar_quizwindow():
 	get_tree().paused = false
 	
 	var nivel = get_tree().current_scene
+	if nivel.has_method("show_objective_ui"):
+		nivel.show_objective_ui()
+
 	if nivel.has_method("quiz_respondido"):
 		nivel.quiz_respondido()

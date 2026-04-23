@@ -48,7 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://cu16oh0bckdls" path="res://Assets/Audios/Pasos.wav" id="46_bn8xc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yn31"]
-size = Vector2(35, 53)
+size = Vector2(35, 42)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_umebe"]
 animations = [{
@@ -226,13 +226,13 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1755915624]
-position = Vector2(590, 324)
+position = Vector2(592, 307)
+collision_mask = 3
 script = ExtResource("1_5h38p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=235751227]
-visible = false
 visibility_layer = 2
-position = Vector2(0.5, 4.5)
+position = Vector2(0.5, 10)
 shape = SubResource("RectangleShape2D_1yn31")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=140084258]
@@ -247,5 +247,6 @@ limit_right = 1152
 limit_bottom = 648
 
 [node name="SfxSteps" type="AudioStreamPlayer2D" parent="." unique_id=2015937613]
+position = Vector2(3, 12)
 stream = ExtResource("46_bn8xc")
 volume_db = -12.0

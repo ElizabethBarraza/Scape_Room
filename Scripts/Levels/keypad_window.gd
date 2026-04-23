@@ -43,12 +43,21 @@ func abrir_keypad() -> void:
 	input_label.text = "_ _ _ _"
 	feedback_label.text = ""
 	feedback_label.modulate = Color(1, 1, 1)
+
+	var nivel = get_tree().current_scene
+	if nivel.has_method("hide_objective_ui"):
+		nivel.hide_objective_ui()
+
 	show()
 	get_tree().paused = true
 
 func cerrar_keypad() -> void:
 	hide()
 	get_tree().paused = false
+
+	var nivel = get_tree().current_scene
+	if nivel.has_method("show_objective_ui"):
+		nivel.show_objective_ui()
 
 	# Mostrar ayuda solo si cerró sin ingresar el código correcto
 	if not codigo_correcto:
@@ -58,8 +67,42 @@ func _input(event: InputEvent) -> void:
 	if not visible:
 		return
 
+	# Cerrar con ESC
 	if event.is_action_pressed("ui_cancel"):
 		cerrar_keypad()
+		get_viewport().set_input_as_handled()
+		return
+
+	# Solo procesar teclas presionadas una vez
+	if event is InputEventKey and event.pressed and not event.echo:
+		match event.keycode:
+			KEY_0, KEY_KP_0:
+				_on_digit_pressed("0")
+			KEY_1, KEY_KP_1:
+				_on_digit_pressed("1")
+			KEY_2, KEY_KP_2:
+				_on_digit_pressed("2")
+			KEY_3, KEY_KP_3:
+				_on_digit_pressed("3")
+			KEY_4, KEY_KP_4:
+				_on_digit_pressed("4")
+			KEY_5, KEY_KP_5:
+				_on_digit_pressed("5")
+			KEY_6, KEY_KP_6:
+				_on_digit_pressed("6")
+			KEY_7, KEY_KP_7:
+				_on_digit_pressed("7")
+			KEY_8, KEY_KP_8:
+				_on_digit_pressed("8")
+			KEY_9, KEY_KP_9:
+				_on_digit_pressed("9")
+			KEY_ENTER, KEY_KP_ENTER:
+				_on_enter_pressed()
+			KEY_BACKSPACE, KEY_DELETE:
+				_on_clear_pressed()
+			_:
+				return
+
 		get_viewport().set_input_as_handled()
 
 func _on_digit_pressed(digit: String) -> void:
@@ -113,7 +156,6 @@ func mostrar_mensaje_supervisor() -> void:
 	if nivel == null:
 		return
 
-	# Busca un Label llamado HintLabel dentro del nivel actual
 	var hint_label = nivel.get_node_or_null("UI/HintLabel")
 
 	if hint_label != null:
